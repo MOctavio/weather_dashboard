@@ -29,6 +29,7 @@ String icon;
 PImage weatherIcon;
 
 void update_data() {
+  //Please use your API KEY http://openweathermap.org/appid
   json = loadJSONObject("http://api.openweathermap.org/data/2.5/weather?q=Liberia,cr&APPID=46611953e2cbb32a28715f841b70d720");
 
   JSONObject coord = json.getJSONObject("coord");
