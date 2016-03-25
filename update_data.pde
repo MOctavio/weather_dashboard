@@ -41,7 +41,7 @@ void update_data() {
   sunS = sys.getInt("sunset");
 
   JSONObject main = json.getJSONObject("main");
-  temp = main.getInt("temp");
+  temp = main.getFloat("temp");
   pressure = main.getInt("pressure");
   humidity = main.getInt("humidity");
   
