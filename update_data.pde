@@ -7,6 +7,8 @@ float lat;
 //system
 long sunR;
 long sunS;
+String city;
+String country;
 
 //main weather
 float temp;
@@ -21,7 +23,6 @@ float windD;
 int cloud;
 
 //weather
-
 int ID;
 String condition;
 String description;
@@ -39,7 +40,10 @@ void update_data() {
   JSONObject sys = json.getJSONObject("sys");
   sunR = sys.getLong("sunrise");
   sunS = sys.getLong("sunset");
-
+  country = sys.getString("country");
+    
+  city = json.getString("name");
+  
   JSONObject main = json.getJSONObject("main");
   temp = main.getFloat("temp");
   pressure = main.getInt("pressure");
