@@ -5,8 +5,8 @@ float lon;
 float lat;
 
 //system
-int sunR;
-int sunS;
+long sunR;
+long sunS;
 
 //main weather
 float temp;
@@ -30,15 +30,15 @@ PImage weatherIcon;
 
 void update_data() {
   //Please use your API KEY http://openweathermap.org/appid
-  json = loadJSONObject("http://api.openweathermap.org/data/2.5/weather?q=Liberia,cr&APPID=46611953e2cbb32a28715f841b70d720");
+  json = loadJSONObject("http://api.openweathermap.org/data/2.5/weather?q=liberia,cr&APPID=46611953e2cbb32a28715f841b70d720");
 
   JSONObject coord = json.getJSONObject("coord");
   lat = coord.getFloat("lat");
   lon = coord.getFloat("lon");
 
   JSONObject sys = json.getJSONObject("sys");
-  sunR = sys.getInt("sunrise");
-  sunS = sys.getInt("sunset");
+  sunR = sys.getLong("sunrise");
+  sunS = sys.getLong("sunset");
 
   JSONObject main = json.getJSONObject("main");
   temp = main.getFloat("temp");
