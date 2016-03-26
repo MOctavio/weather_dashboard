@@ -15,5 +15,9 @@ String  millisecondsToTime(long milli)
 }
 
 String kelvinToCelsius(double kelvin) {
-  return Math.round(kelvin - 273.0) + " C";
+  return Math.round(kelvin - 273.0) + "°C";
+}
+
+String mpsToKph(float windS) {
+  return Math.round(windS*3.6*100)/100 + "kph";
 }
